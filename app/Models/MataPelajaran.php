@@ -4,22 +4,22 @@ namespace App\Models;
 
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 // use Illuminate\Database\Eloquent\Model;
-use Jenssegers\Mongodb\Eloquent\Model;
+use jenssegers\Mongodb\Eloquent\Model;
 
-class Siswa extends Model
+class MataPelajaran extends Model
 {
     use HasFactory;
     protected $connection = 'mongodb';
-    protected $collection = 'siswa';
+    protected $collection = 'mata_pelajaran';
     protected $guarded = ['_id'];
     protected $filable = [
-        'nama',
-        'kelas_id'
+        'nama_mapel',
+        'guru_mapel'
     ];
     public $timestamps = false;
 
     public function nilai()
     {
-        return $this->hasMany(Nilai::class);
+        return $this->hasMany(Nilai::class, 'mapel_id', '_id');
     }
 }
