@@ -55,13 +55,13 @@ class KelasController extends Controller
             ]);
             if ($kelas){
                 return response()->json([
-                    "message" => "Data berhasil disimpan",
-                    "data" => $kelas
+                    'message' => "Data berhasil disimpan",
+                    'data' => $kelas
                 ], 200);
             } else {
                 return response()->json([
                     'status' => 500,
-                    'message' => "Data tidak berhasil dihapus"
+                    'message' => "Data tidak berhasil disimpan"
                 ], 500);
             }
         }
@@ -134,8 +134,8 @@ class KelasController extends Controller
                 ]);
 
                 return response()->json([
-                    "message" => "Data berhasil diubah",
-                    "data" => $kelas
+                    'message' => "Data berhasil diubah",
+                    'data' => $kelas
                 ], 200);
             } else {
                 return response()->json([
